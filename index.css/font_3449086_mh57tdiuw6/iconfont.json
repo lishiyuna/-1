@@ -1,0 +1,44 @@
+{
+  "id": "3449086",
+  "name": "天气风向",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "5388025",
+      "name": "车_o",
+      "font_class": "che_o",
+      "unicode": "ebba",
+      "unicode_decimal": 60346
+    },
+    {
+      "icon_id": "5873758",
+      "name": "气压",
+      "font_class": "qiya",
+      "unicode": "e7fb",
+      "unicode_decimal": 59387
+    },
+    {
+      "icon_id": "12342780",
+      "name": "箭头-双箭头",
+      "font_class": "jiantou-shuangjiantou",
+      "unicode": "e681",
+      "unicode_decimal": 59009
+    },
+    {
+      "icon_id": "18204358",
+      "name": "天气湿度",
+      "font_class": "tianqishidu",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "25716509",
+      "name": "风向",
+      "font_class": "fengxiang",
+      "unicode": "ea32",
+      "unicode_decimal": 59954
+    }
+  ]
+}

@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./腾讯天气js/normalize.css">
+    <link rel="stylesheet" href="./index.css/index.css">
+    <link rel="stylesheet" href="./腾讯天气js/bootstrap.min.css">
+    <link rel="stylesheet" href="./index.css/font_3448742_2iqt8ylshh7/iconfont.css">
+    <link rel="stylesheet" href="./index.css/font_3449086_mh57tdiuw6/iconfont.css">
+    <script src="./腾讯天气js/echarts.js"></script>
+
+    <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.3.2/dist/echarts.min.js"></script>
+
+
+    <!-- <script src="./图标/download/font_3388425_m83b0tyhxr/jq.js/bootstrap-3.4.1-dist/js/bootstrap.min.js"></script> -->
+    <style>
+
+    </style>
+</head>
+<!--  -->
+
+<body>
+    <div class="body">
+        <div class="maxbox">
+            <div class="title">
+                <img src="https://mat1.gtimg.com/qqcdn/tupload/1630660727563.png" alt="" id="img">
+                <div class="boxright">
+                    <a href="">无障碍浏览</a>
+                    <div class="chengshi">
+                        <img src="https://mat1.gtimg.com/qqcdn/tupload/1630660669191.png" alt="">
+                        <div class="nav">
+                            例如:河南
+                        </div>
+                        <div class="nav1">
+                            状态
+                        </div>
+                        <div class="yin">
+                            <div class="bix">
+                                关注的城市
+                            </div>
+                            <div class="box1">
+                                <div class="box2">
+                                    <p>郑州</p>
+                                    <div id="box3">
+                                        默认
+                                    </div>
+                                </div>
+                                <div class="iconfont icon-yintian " id="box5">
+                                    <p>小雨转阴</p>
+                                </div>
+                                <div class="box4">
+                                    24°/32°
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="text" placeholder="搜索市，县，区" id="in">
+                </div>
+                <div class="sousuo" id="sou">
+                    <p>当前定位</p>
+                    <div class="zhi">
+                        <a href="">郑州市</a>
+                        <div class=""> 定位</div>
+                    </div>
+                    <div class="chu">
+                        <p>历史记录</p>
+                        <div class="qing">清除</div>
+                    </div>
+                    <div class="shi">
+                        <a href="" id="a1">天津</a>
+                        <a href="" id="a1">扬州</a>
+                        <a href="" id="a1">福州</a>
+                    </div>
+                    <p>热门城市</p>
+                    <div class="reimen">
+                        <a href="">北京</a>
+                        <a href="">上海</a>
+                        <a href="">广州</a>
+                        <a href="">深圳</a>
+                        <a href="">天津</a>
+                        <a href="">西安</a>
+                        <a href="">武汉</a>
+                        <a href="">成都</a>
+                        <a href="">石家庄</a>
+                        <a href="">郑州</a>
+                        <a href="">哈尔滨</a>
+                        <a href="">太原</a>
+                        <a href="">乌鲁木齐</a>
+                        <a href="">济南</a>
+                        <a href="">福州</a>
+                        <a href="">日克则</a>
+                        <a href="">厦门</a>
+                        <a href="">青岛</a>
+                        <a href="">扬州</a>
+                        <a href="">合肥</a>
+                        <a href="">重庆</a>
+                        <a href="">南昌</a>
+                        <a href="">唐山</a>
+                        <a href="">杭州</a>
+                        <a href="">形态</a>
+                        <a href="">沈阳</a>
+                        <a href="">邯郸</a>
+                        <a href="">昆明</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tex">
+                <p id="yang"></p>
+            </div>
+            <div class="tian">
+                <div id="ply">28°</div>
+                <div class="tianqi">多云</div>
+                <div class="iconfont icon-yezi yezi" id="p2"></div>
+                <!-- <div class="qiang">强对流预警</div> -->
+                <img src="https://mat1.gtimg.com/pingjs/ext2020/weather/pc/icon/currentweather/day/01.png" alt="">
+            </div>
+            <div class="feng">
+                <div class="ji1">
+                    <div class="ji iconfont icon-fengxiang"></div>
+                    <div class="tex2">西风 2级</div>
+                </div>
+                <div class="shi1">
+                    <div class="shi  iconfont icon-tianqishidu"></div>
+                    <div class="shi2">湿度 59%</div>
+                </div>
+                <div class="qi1">
+                    <div class="qiya iconfont icon-qiya"></div>
+                    <div class="qiya1">气压 989hPa</div>
+                </div>
+                <div class="buxian">
+                    <div class="che iconfont icon-che_o "></div>
+                    <div class="xian1">不限行</div>
+                </div>
+
+            </div>
+            <div class="shu">
+                <p id="p12"></p>
+                <p id="p13">
+
+                </p>
+                <p> <img src="https://mat1.gtimg.com/qqcdn/tupload/1630660670962.png" alt="" id="dian"></p>
+                </p>
+            </div>
+        </div>
+        <div class="xian"></div>
+        <div class="cenbox">
+            <div class="heji">
+                <div class="quan">
+                    <div class="yuan"></div>
+                    <div id="h2">逐小时预报</div>
+                    <a href="" id="a1">数据来源于中国气象网</a>
+                    <div id="img2">
+                        <button id="bt" class="btn10"><img src="https://mat1.gtimg.com/qqcdn/tupload/1630660669641.png"
+                            alt=""> </button>
+                        <button id='bt' class="btn11"> <img src="https://mat1.gtimg.com/qqcdn/tupload/1630660669397.png" alt=""> </button>
+                    </div>
+
+
+                   
+                </div>
+                <div class="tian24">
+                    <div class="ul">
+                        <!-- <li>
+                            <p id="time">13:00</p>
+                            <img src="https://mat1.gtimg.com/pingjs/ext2020/weather/pc/icon/weather/day/00.png" alt="">
+                            <p>34°</p>
+                        </li>
+                        <li>
+                            <p>14:00</p>
+                            <img src="https://mat1.gtimg.com/pingjs/ext2020/weather/pc/icon/weather/day/00.png" alt="">
+                            <p>34°</p>
+                        </li>
+                        <li>
+                            <p>15:00</p>
+                            <img src="https://mat1.gtimg.com/pingjs/ext2020/weather/pc/icon/weather/day/00.png" alt="">
+                            <p>34°</p>
+                        </li>
+                        <li>
+                            <p>16:00</p>
+                            <img src="https://mat1.gtimg.com/pingjs/ext2020/weather/pc/icon/weather/day/00.png" alt="">
+                            <p>34°</p>
+                        </li>
+                        <li>
+                            <p>17:00</p>
+                            <img src="https://mat1.gtimg.com/pingjs/ext2020/weather/pc/icon/weather/day/01.png" alt="">
+                            <p>34°</p>
+                        </li>
+                        <li>
+                            <p>18:00</p>
+                            <img src="https://mat1.gtimg.com/pingjs/ext2020/weather/pc/icon/weather/day/01.png" alt="">
+                            <p>34°</p>
+                        </li>
+                        <li>
+                            <p>19:00</p>
+                            <img src="https://mat1.gtimg.com/pingjs/ext2020/weather/pc/icon/weather/day/01.png" alt="">
+                            <p>34°</p>
+                        </li>
+                        <li>
+                            <p>19:35</p>
+                            <img src="https://mat1.gtimg.com/pingjs/ext2020/weather/pc/icon/weather/set.png" alt="">
+                            <p>日落</p>
+                        </li>
+                        <li>
+                            <p>18:00</p>
+                            <img src="https://mat1.gtimg.com/pingjs/ext2020/weather/pc/icon/weather/night/01.png"
+                                alt="">
+                            <p>34°</p>
+                        </li>
+                        <li>
+                            <p>19:00</p>
+                            <img src="https://mat1.gtimg.com/pingjs/ext2020/weather/pc/icon/weather/night/01.png"
+                                alt="">
+                            <p>34°</p>
+                        </li>
+                        <li>
+                            <p>20:00</p>
+                            <img src="https://mat1.gtimg.com/pingjs/ext2020/weather/pc/icon/weather/night/00.png"
+                                alt="">
+                            <p>34°</p>
+                        </li>
+                        <li>
+                            <p>21:00</p>
+                            <img src="https://mat1.gtimg.com/pingjs/ext2020/weather/pc/icon/weather/night/00.png"
+                                alt="">
+                            <p>34°</p>
+                        </li>
+                        <li>
+                            <p>21:00</p>
+                            <img src="https://mat1.gtimg.com/pingjs/ext2020/weather/pc/icon/weather/night/00.png"
+                                alt="">
+                            <p>34°</p>
+                        </li>
+                        <li>
+                            <p>21:00</p>
+                            <img src="https://mat1.gtimg.com/pingjs/ext2020/weather/pc/icon/weather/night/00.png"
+                                alt="">
+                            <p>34°</p>
+                        </li>
+                        <li>
+                            <p>21:00</p>
+                            <img src="https://mat1.gtimg.com/pingjs/ext2020/weather/pc/icon/weather/night/00.png"
+                                alt="">
+                            <p>34°</p>
+                        </li>
+                        <li>
+                            <p>21:00</p>
+                            <img src="https://mat1.gtimg.com/pingjs/ext2020/weather/pc/icon/weather/night/00.png"
+                                alt="">
+                            <p>34°</p>
+                        </li>
+                        <li>
+                            <p>21:00</p>
+                            <img src="https://mat1.gtimg.com/pingjs/ext2020/weather/pc/icon/weather/night/00.png"
+                                alt="">
+                            <p>34°</p>
+                        </li>
+                        <li>
+                            <p>21:00</p>
+                            <img src="https://mat1.gtimg.com/pingjs/ext2020/weather/pc/icon/weather/night/00.png"
+                                alt="">
+                            <p>34°</p>
+                        </li>
+                        <li>
+                            <p>21:00</p>
+                            <img src="https://mat1.gtimg.com/pingjs/ext2020/weather/pc/icon/weather/night/00.png"
+                                alt="">
+                            <p>34°</p>
+                        </li>
+                        <li>
+                            <p>21:00</p>
+                            <img src="https://mat1.gtimg.com/pingjs/ext2020/weather/pc/icon/weather/night/00.png"
+                                alt="">
+                            <p>34°</p>
+                        </li>
+                        <li>
+                            <p>21:00</p>
+                            <img src="https://mat1.gtimg.com/pingjs/ext2020/weather/pc/icon/weather/night/00.png"
+                                alt="">
+                            <p>34°</p>
+                        </li>
+                        <li>
+                            <p>21:00</p>
+                            <img src="https://mat1.gtimg.com/pingjs/ext2020/weather/pc/icon/weather/night/00.png"
+                                alt="">
+                            <p>34°</p>
+                        </li>
+                        <li>
+                            <p>21:00</p>
+                            <img src="https://mat1.gtimg.com/pingjs/ext2020/weather/pc/icon/weather/night/00.png"
+                                alt="">
+                            <p>34°</p>
+                        </li>
+                        <li>
+                            <p>21:00</p>
+                            <img src="https://mat1.gtimg.com/pingjs/ext2020/weather/pc/icon/weather/night/00.png"
+                                alt="">
+                            <p>34°</p>
+                        </li> -->
+                    </div>
+                </div>
+            </div>
+            <div class="zong">
+                <div class="leftbottom">
+                    <div class="leftshou">
+                        <li>7日天气预报</li>
+                        <a href="" class="rightshou">
+                            15日天气预报
+                        </a>
+                    </div>
+                    <div class="item1">
+                        <div class="item">
+                            <p id="ce" class="ced">昨天</p>
+                            <p id="qe">06月04日</p>
+                            <p id="p21" class="tq">小雨</p>
+                            <img src="https://mat1.gtimg.com/pingjs/ext2020/weather/pc/icon/weather/day/07.png" alt=""
+                                id="img1">
+                            <img src="https://mat1.gtimg.com/pingjs/ext2020/weather/pc/icon/weather/night/07.png" alt=""
+                                id="img0" class="right">
+                            <p id="p0" class="yu">小雨</p>
+                            <p id="p22">西北风 三级</p>
+                        </div>
+                        <div class="item" style="background-color: beige;">
+                            <p id="ce" class="ced">今天</p>
+                            <p id="qe">06月04日</p>
+                            <p id="p21" class="tq">小雨</p>
+                            <img src="https://mat1.gtimg.com/pingjs/ext2020/weather/pc/icon/weather/day/07.png" alt=""
+                                id="img1">
+                            <img src="https://mat1.gtimg.com/pingjs/ext2020/weather/pc/icon/weather/night/07.png" alt=""
+                                id="img0" class="right">
+                            <p id="p0" class="yu">小雨</p>
+                            <p id="p22">西北风 三级</p>
+                        </div>
+                        <div class="item">
+                            <p id="ce" class="ced">明天</p>
+                            <p id="qe">06月04日</p>
+                            <p id="p21" class="tq">小雨</p>
+                            <img src="https://mat1.gtimg.com/pingjs/ext2020/weather/pc/icon/weather/day/07.png" alt=""
+                                id="img1">
+                            <img src="https://mat1.gtimg.com/pingjs/ext2020/weather/pc/icon/weather/night/07.png" alt=""
+                                id="img0" class="right">
+                            <p id="p0" class="yu">小雨</p>
+                            <p id="p22">西北风 三级</p>
+                        </div>
+                        <div class="item">
+                            <p id="ce" class="ced">后天</p>
+                            <p id="qe">06月04日</p>
+                            <p id="p21" class="tq">小雨</p>
+                            <img src="https://mat1.gtimg.com/pingjs/ext2020/weather/pc/icon/weather/day/07.png" alt=""
+                                id="img1">
+                            <img src="https://mat1.gtimg.com/pingjs/ext2020/weather/pc/icon/weather/night/07.png" alt=""
+                                id="img0" class="right">
+                            <p id="p0" class="yu">小雨</p>
+                            <p id="p22">西北风 三级</p>
+                        </div>
+                        <div class="item">
+                            <p id="ce" class="ced">周四</p>
+                            <p id="qe">06月04日</p>
+                            <p id="p21" class="tq">小雨</p>
+                            <img src="https://mat1.gtimg.com/pingjs/ext2020/weather/pc/icon/weather/day/07.png" alt=""
+                                id="img1">
+                            <img src="https://mat1.gtimg.com/pingjs/ext2020/weather/pc/icon/weather/night/07.png" alt=""
+                                id="img0" class="right">
+                            <p id="p0" class="yu">小雨</p>
+                            <p id="p22">西北风 三级</p>
+                        </div>
+                        <div class="item">
+                            <p id="ce" class="ced">周五</p>
+                            <p id="qe">06月04日</p>
+                            <p id="p21" class="tq">小雨</p>
+                            <img src="https://mat1.gtimg.com/pingjs/ext2020/weather/pc/icon/weather/day/07.png" alt=""
+                                id="img1">
+                            <img src="https://mat1.gtimg.com/pingjs/ext2020/weather/pc/icon/weather/night/07.png" alt=""
+                                id="img0" class="right">
+                            <p id="p0" class="yu">小雨</p>
+                            <p id="p22">西北风 三级</p>
+                        </div>
+                        <div class="item">
+                            <p id="ce" class="ced">周六</p>
+                            <p id="qe">06月04日</p>
+                            <p id="p21" class="tq">小雨</p>
+                            <img src="https://mat1.gtimg.com/pingjs/ext2020/weather/pc/icon/weather/day/07.png" alt=""
+                                id="img1">
+                            <img src="https://mat1.gtimg.com/pingjs/ext2020/weather/pc/icon/weather/night/07.png" alt=""
+                                id="img0" class="right">
+                            <p id="p0" class="yu">小雨</p>
+                            <p id="p22">西北风 三级</p>
+                        </div>
+                        <div class="item">
+                            <p id="ce" class="ced">周日</p>
+                            <p id="qe">06月04日</p>
+                            <p id="p21" class="tq">小雨</p>
+                            <img src="https://mat1.gtimg.com/pingjs/ext2020/weather/pc/icon/weather/day/07.png" alt=""
+                                id="img1">
+                            <img src="https://mat1.gtimg.com/pingjs/ext2020/weather/pc/icon/weather/night/07.png" alt=""
+                                id="img0" class="right">
+                            <p id="p0" class="yu">小雨</p>
+                            <p id="p22">西北风 三级</p>
+
+                        </div>
+                    </div>
+                    <!-- 线状图 -->
+                    <div id="container">
+
+                    </div>
+
+                </div>
+                <div class="rightbottom">
+                    <li>生活指数</li>
+                    <div class="tupian">
+                      <button class="btn3">  <img src="https://mat1.gtimg.com/qqcdn/tupload/1630660669641.png" alt=""></button> 
+                       <button class="btn4">  <img src="https://mat1.gtimg.com/qqcdn/tupload/1630660669397.png" alt=""></button>
+                     
+                    </div>
+                    <div class="xun">
+                        <div class="su">
+                            <div class="yi">
+                                <div class="gap gap1">
+                                    <img src="https://mat1.gtimg.com/qqcdn/tupload/1630660666213.png" alt="">
+                                    <p>穿衣 炎热</p>
+                                </div>
+                                <div class="ga">
+                                    天气条件不易诱发过敏，除特殊体质外，无需担心过敏问题
+                                </div>
+                            </div>
+                            <div class="yi">
+                                <div class="gap gap1">
+                                    <img src="https://mat1.gtimg.com/qqcdn/tupload/1630660666213.png" alt="">
+                                    <p>穿衣 炎热</p>
+                                </div>
+                                <div class="ga">
+                                    天气条件不易诱发过敏，除特殊体质外，无需担心过敏问题
+                                </div>
+                            </div>
+                            <div class="yi">
+                                <div class="gap gap1">
+                                    <img src="https://mat1.gtimg.com/qqcdn/tupload/1630660666213.png" alt="">
+                                    <p>穿衣 炎热</p>
+                                </div>
+                                <div class="ga">
+                                    天气条件不易诱发过敏，除特殊体质外，无需担心过敏问题
+                                </div>
+                            </div>
+                            <div class="yi">
+                                <div class="gap gap1">
+                                    <img src="https://mat1.gtimg.com/qqcdn/tupload/1630660666213.png" alt="">
+                                    <p>穿衣 炎热</p>
+                                </div>
+                                <div class="ga">
+                                    天气条件不易诱发过敏，除特殊体质外，无需担心过敏问题
+                                </div>
+                            </div>
+                            <div class="yi">
+                                <div class="gap gap1">
+                                    <img src="https://mat1.gtimg.com/qqcdn/tupload/1630660666213.png" alt="">
+                                    <p>穿衣 炎热</p>
+                                </div>
+                                <div class="ga">
+                                    天气条件不易诱发过敏，除特殊体质外，无需担心过敏问题
+                                </div>
+                            </div>
+                            <div class="yi">
+                                <div class="gap gap1">
+                                    <img src="https://mat1.gtimg.com/qqcdn/tupload/1630660666213.png" alt="">
+                                    <p>穿衣 炎热</p>
+                                </div>
+                                <div class="ga">
+                                    天气条件不易诱发过敏，除特殊体质外，无需担心过敏问题
+                                </div>
+                            </div>
+                            <div class="yi">
+                                <div class="gap gap1">
+                                    <img src="https://mat1.gtimg.com/qqcdn/tupload/1630660666213.png" alt="">
+                                    <p>穿衣 炎热</p>
+                                </div>
+                                <div class="ga">
+                                    天气条件不易诱发过敏，除特殊体质外，无需担心过敏问题
+                                </div>
+                            </div>
+                            <div class="yi">
+                                <div class="gap gap1">
+                                    <img src="https://mat1.gtimg.com/qqcdn/tupload/1630660666213.png" alt="">
+                                    <p>穿衣 炎热</p>
+                                </div>
+                                <div class="ga">
+                                    天气条件不易诱发过敏，除特殊体质外，无需担心过敏问题
+                                </div>
+                            </div>
+                            <div class="yi">
+                                <div class="gap gap1">
+                                    <img src="https://mat1.gtimg.com/qqcdn/tupload/1630660666213.png" alt="">
+                                    <p>穿衣 炎热</p>
+                                </div>
+                                <div class="ga">
+                                    天气条件不易诱发过敏，除特殊体质外，无需担心过敏问题
+                                </div>
+                            </div>
+                            <div class="yi">
+                                <div class="gap gap1">
+                                    <img src="https://mat1.gtimg.com/qqcdn/tupload/1630660666213.png" alt="">
+                                    <p>穿衣 炎热</p>
+                                </div>
+                                <div class="ga">
+                                    天气条件不易诱发过敏，除特殊体质外，无需担心过敏问题
+                                </div>
+                            </div>
+                            <div class="yi">
+                                <div class="gap gap1">
+                                    <img src="https://mat1.gtimg.com/qqcdn/tupload/1630660666213.png" alt="">
+                                    <p>穿衣 炎热</p>
+                                </div>
+                                <div class="ga">
+                                    天气条件不易诱发过敏，除特殊体质外，无需担心过敏问题
+                                </div>
+                            </div>
+                            <div class="yi">
+                                <div class="gap gap1">
+                                    <img src="https://mat1.gtimg.com/qqcdn/tupload/1630660666213.png" alt="">
+                                    <p>穿衣 炎热</p>
+                                </div>
+                                <div class="ga">
+                                    天气条件不易诱发过敏，除特殊体质外，无需担心过敏问题
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="top">
+            <a href=""><img src="https://mat1.gtimg.com/qqcdn/tupload/1630660727718.png" alt=""></a>
+            <a href=""> <img src="https://mat1.gtimg.com/qqcdn/tupload/1630660727966.png" alt=""></a>
+            <a href=""> <img src="https://mat1.gtimg.com/pingjs/ext2020/test2017/sponsor-zgtq.png" alt=""></a>
+        </div>
+        <div class="bott">
+
+        </div>
+    </footer>
+</body>
+
+<!-- <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.3.2/dist/echarts.min.js"></script> -->
+<!-- <script type="text/javascript">
+
+
+    var dom = document.getElementById('container');
+    var myChart = echarts.init(dom, null, {
+        renderer: 'canvas',
+        useDirtyRect: false
+    });
+    var app = {};
+
+    var option;
+
+    option = {
+
+        tooltip: {
+            trigger: 'axis'
+        },
+        legend: {},
+        toolbox: {
+            show: true,
+            feature: {
+                // dataZoom: {
+                //   yAxisIndex: 'none'
+                // },
+                // dataView: { readOnly: false },
+                // magicType: { type: ['line', 'bar'] },
+                // restore: {},
+                // saveAsImage: {}
+            }
+        },
+        xAxis: {
+            type: 'category',
+            // boundaryGap: false,
+            data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun', 'dsd'],
+            show: false,
+            lineStyle: {
+                width: 3,
+
+            },
+
+        },
+        yAxis: {
+            // type: 'value',
+            // axisLabel: {
+            //   formatter: '{value} °C'
+            // },
+            show: false,
+
+        },
+        series: [
+            {
+                type: 'line',
+                data: [37, 35, 33, 36, 31, 36, 36, 33],
+                smooth: true,
+                lineStyle: {
+                    width: 3,
+                    color: "#fcc330",
+
+                },
+                label: {
+                    show: true,
+                    position: 'top',
+                    textStyle: {
+                        fontSize: 14
+                    }
+                },
+                markPoint: {
+                    // data: [
+                    //   { type: 'max', name: 'Max' },
+                    //   { type: 'min', name: 'Min' }
+                    // ]
+                },
+                // markLine: {
+
+                // }
+            },
+
+
+            {
+
+                type: 'line',
+                data: [24, 20, 22, 21, 21, 23, 24, 25],
+                smooth: true,
+                lineStyle: {
+                    width: 3,
+                },
+                label: {
+                    show: true,
+                    position: 'top',
+                    textStyle: {
+                        fontSize: 14
+                    }
+                },
+                markLine: {
+                    data: [
+                        [
+
+                            {
+                                symbol: 'none',
+                                x: '90%',
+                                yAxis: 'max'
+                            },
+                            {
+                                symbol: 'circle',
+                                label: {
+                                    position: 'start',
+                                    formatter: 'Max'
+                                },
+
+                            }
+                        ]
+                    ]
+                }
+            }
+        ]
+    };
+    if (option && typeof option === 'object') {
+        myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize); -->
+</script>
+<script src="../图标/download/font_3388425_m83b0tyhxr/jq.js/jquery.js"></script>
+<script src="./腾讯天气js/index.js"></script>
+
+
+</html>
